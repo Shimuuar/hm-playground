@@ -1,0 +1,54 @@
+Name:           hm-playground
+Version:        0.1
+Synopsis:       Hindley-Milner type inference algorithm
+Description:
+  This repo contains code for Hindley-Milner type inferece
+  algorithm. It's nowhere near being roduction ready and serves mostly
+  as playground for testing ideas.
+
+
+Cabal-Version:  >= 1.10
+License:        BSD2
+License-File:   LICENSE
+Author:         Aleksey Khudyakov <alexey.skladnoy@gmail.com>
+Maintainer:     Aleksey Khudyakov <alexey.skladnoy@gmail.com>
+Homepage:       https://github.com/Shimuuar/hm-playground
+Category:       Data
+Build-Type:     Simple
+
+
+Library
+  Ghc-options:         -Wall
+  Default-Language:    Haskell2010
+  Build-Depends:       base              >=4.9 && <5
+                     , Earley            >=0.13
+                     , recursion-schemes >=5.2
+                     , regex-applicative >=0.3
+                     , containers
+  Exposed-modules:
+        HM.Recursion
+  default-extensions:
+    MonoLocalBinds
+    -- Deriving
+    DeriveAnyClass
+    DeriveFoldable
+    DeriveFunctor
+    DeriveGeneric
+    DeriveTraversable
+    DerivingStrategies
+    DerivingVia
+    GeneralizedNewtypeDeriving
+    StandaloneDeriving
+    -- Sugar
+    BangPatterns
+    LambdaCase
+    MultiWayIf
+    RecordWildCards
+    OverloadedStrings
+    TypeOperators
+    -- Types
+    ScopedTypeVariables
+    TypeApplications
+    -- Instances
+    FlexibleContexts
+    FlexibleInstances
