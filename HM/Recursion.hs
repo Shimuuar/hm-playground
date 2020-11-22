@@ -45,3 +45,12 @@ rcata :: Recursive t
 rcata f = go
   where
     go e = f e . fmap (flip go) . project
+
+-- | Descend into data type and replace nodes that match predicate function
+replaceCata
+  :: (Recursive t, Corecursive t)
+  => (Base t t -> Maybe t)
+  -> t -> t
+replaceCata fun = cata $ \x ->
+  case fun x of Nothing -> embed x
+                Just x' -> x'

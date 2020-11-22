@@ -22,11 +22,16 @@ Library
   Default-Language:    Haskell2010
   Build-Depends:       base              >=4.9 && <5
                      , Earley            >=0.13
-                     , recursion-schemes >=5.2
+                     , recursion-schemes >=5.1
                      , regex-applicative >=0.3
                      , containers
+                     , mtl
   Exposed-modules:
         HM.Recursion
+        HM.Simple.AST
+        HM.Simple.Parser
+        HM.Simple.Infer
+        HM.Infer.Types
   default-extensions:
     MonoLocalBinds
     -- Deriving
